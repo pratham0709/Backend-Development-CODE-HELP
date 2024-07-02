@@ -12,7 +12,7 @@ require("./config/database").connect();
 
 // import routes
 const user = require("./routes/user");
-app.use("api/v1", user);
+app.use("/api/v1", user);
 
 // activate server
 app.listen(PORT, () =>{
