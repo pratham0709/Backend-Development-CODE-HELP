@@ -1,0 +1,15 @@
+[
+	{
+		"name": "sanjay",
+		"age": 28,
+		"city": "Mumbai",
+		"salary": 5000
+	},
+	{
+		"name": "Atharva",
+		"age": 25,
+		"city": "Dhule",
+		"salary": 6000
+	}
+
+]
