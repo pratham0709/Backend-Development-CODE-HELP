@@ -64,12 +64,12 @@ exports.login = async (req,res) => {
         if(!email || !password){
             return res.status(400).json({
                 success: false,
-                message : "Please fill the detail carefully",
+                message : "Please fill all the detail carefully",
             });
         }
 
         // check for ragister user
-        const user = await User.findOne({email});
+        let user = await User.findOne({email});
 
         // if not a ragister user
         if(!user) {
@@ -98,11 +98,6 @@ exports.login = async (req,res) => {
             user.token = token;
             user.password = undefined;
             console.log(user);
-            // user.token = token;
-
-            // console.log(user);
-            // user.password = undefined;
-            // console.log(user);
 
             const options = {
                 expires : new Date( Date.now() + 3 * 24 * 24 * 60 * 60 * 1000),
