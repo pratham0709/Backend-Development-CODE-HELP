@@ -100,23 +100,23 @@ exports.login = async (req,res) => {
             console.log(user);
 
             const options = {
-                expires : new Date( Date.now() + 3 * 24 * 24 * 60 * 60 * 1000),
+                expires : new Date( Date.now() + 30000),
                 httpOnly: true,
             }
 
-            // res.cookie("prathamesh cookie", token, options).status(200).json({
-            //     success: true,
-            //     token,
-            //     user,
-            //     message: "User Logged in successfully",
-            // });
-
-            res.status(200).json({
+            res.cookie("token", token, options).status(200).json({
                 success: true,
                 token,
                 user,
                 message: "User Logged in successfully",
             });
+
+            // res.status(200).json({
+            //     success: true,
+            //     token,
+            //     user,
+            //     message: "User Logged in successfully",
+            // });
         }
         else{
             // password do not match
