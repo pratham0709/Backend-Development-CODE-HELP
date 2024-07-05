@@ -100,7 +100,7 @@ exports.login = async (req,res) => {
             console.log(user);
 
             const options = {
-                expires : new Date( Date.now() + 30000),
+                expires : new Date( Date.now() + 3 * 24 * 60 * 60 * 30000),
                 httpOnly: true,
             }
 
