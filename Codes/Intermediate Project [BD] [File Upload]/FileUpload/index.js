@@ -20,4 +20,10 @@ const cloudinary = require("./config/cloudinary");
 cloudinary.cloudinaryConnect();
 
 // api route mount krna hai
+const Upload = require("./routes/FileUpload");
+app.use("/api/v1/upload", Upload);
 
+// activate server
+app.listen(PORT, () => {
+    console.log(`APP is Running at ${PORT}`)
+})
